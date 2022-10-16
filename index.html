@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>My Book Shop</title>
+</head>
+
+<body onload="onInit()">
+
+    <div class="container">
+    <header>
+        <img src="img/books-icon.png" alt=""><h1 data-trans="page-title">Welcome to your bookstore!</h1>
+        <select class="lang-select" onchange="onSetLang(this.value)">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
+        </select>
+    </header>
+        <div class="books-container">
+
+            <div class="filters">
+                <button class="green-bg" onclick="onAddBook()" data-trans="add">Add book</button>
+                <div>
+                    <label for="max-price" data-trans="max-price">Max price: </label>
+                    <input id="max-price" type="range" min="2" max="25" value="25" class="filter-max-price"
+                        onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})"/>                   
+                </div>
+                <div>
+                    <label for="min-rate" data-trans="min-rate">Min rate: </label>
+                    <input id="min-rate" type="range" min="0" max="10" value="0" class="filter-min-rate"
+                        onchange="this.title=this.value;onSetFilterBy({minRate: this.value})"/>
+                </div>
+                <select name="sort" onclick="onSetSort(this.value)">
+                    <option data-trans="sort-title" value="">Sort books</option>
+                    <option data-trans="price" value="price">Price</option>
+                    <option data-trans="title" value="title" class="set-sort-title">Title</option>
+                    <option data-trans="rate-title" value="rate">Rate</option>
+                </select>
+                <div>
+                    <input data-trans="txt-placeholder" class="set-txt-filter" type="text" oninput="onSetFilterBy({text: this.value})"
+                        placeholder="Book title..." />
+                </div>
+                <div class="display-btns">
+                    <button class="display-btn" onclick="renderBooksCards()"><img src="img/cards-icon.png"
+                            alt=""></button>
+                    <button class="display-btn" onclick="renderBooksTable()"><img src="img/list-icon.png"
+                            alt=""></button>
+                </div>
+            </div>
+            <section class="books-display">
+                <div class="cards"></div>
+                <table class="hide">
+                    <thead>
+                        <th>Id</th>
+                        <th data-trans="th-title">Title</th>
+                        <th data-trans="th-price">Price</th>
+                        <th data-trans="rate-title">Rate</th>
+                        <th data-trans="th-actions" class="actions">Actions</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+            <div class="paging"><button class="prev green-bg disabled" onclick="onChangePage(-1)" data-trans="prev-btn">prev</button>
+                <span class="curr-page"></span>
+                <button class="next green-bg" onclick="onChangePage(1)" data-trans="next-btn">Next</button>
+            </div>
+
+            <div class="read-modal"></div>
+
+            <div class="add-book-user-input">
+                <form>
+                    <button onclick="onCloseAddBookModal()" class="close-left-modal">X</button>
+                    <label data-trans="add-title" class="add-title-lbl">Enter book title:</label><br>
+                    <input class="enter-title" type="text"><br>
+                    <label data-trans="add-price">Enter price:</label><br>
+                    <input class="enter-price" type="text"><br>
+                    <label data-trans="add-img-url">Enter image URL:</label><br>
+                    <input class="enter-img" type="text"><br>
+                    <button data-trans="add-book-btn" onclick="onSubmitNewBook()" class="green-bg">Add book</button>
+                </form>
+            </div>
+
+            <div class="update-user-input">
+                <form>
+                    <button onclick="onCloseUpdateModal()" class="close-left-modal">X</button>
+                    <label data-trans="update" class="enter-updated-price">Enter updated price:</label><br>
+                    <input class="updated-price" type="text"><br>
+                    <button data-trans="update-btn" onclick="onSubmitUpdate()" class="green-bg">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- JavaScript Bundle with Popper -->
+    <script src="js/services/service.utils.js"></script>
+    <script src="js/services/service.storage.js"></script>
+    <script src="js/services/service.i18b.js"></script>
+    <script src="js/services/service.bookstore.js"></script>
+    <script src="js/bookstore.controller.js"></script>
+    <script src="js/modal.controller.js"></script>
+</body>
+
+</html>

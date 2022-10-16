@@ -1,0 +1,327 @@
+@import 'fonts.css';
+
+
+
+.rtl {
+    direction: rtl;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: MPLUS1p-Regular;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    height: 100px;
+    margin: 0;
+    background-color: rgb(1, 161, 102);
+}
+
+header img {
+    padding: 10px;
+    width: 70px;
+    display: inline-block;
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    display: inline-block;
+    font-family: MPLUS1p-Thin;
+}
+
+.lang-select {
+    padding: 10px;
+    margin-inline-end: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* margin-top: 60px; */
+}
+.filters{
+    flex-grow: 1;
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+ .select-lang{
+    border-radius: 4px;
+ }
+.books-container {
+    flex-grow: 20;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: rgb(247, 247, 247);
+}
+
+.books-container table {
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.books-container thead {
+    background-color: rgb(1, 161, 102);
+    color: #eee;
+}
+
+.books-container button {
+    font-size: 16px;
+    font-family: MPLUS1p-Regular;
+    padding: 5px 10px;
+    margin: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    color: #eee;
+    cursor: pointer;
+}
+
+.green-bg {
+    background-color: rgb(1, 161, 102);
+}
+
+.books-container .read-btn {
+    background-color: rgb(0, 139, 214);
+    cursor: pointer;
+}
+
+.books-container .update-btn {
+    background-color: rgb(229, 149, 0);
+    cursor: pointer;
+
+}
+
+.books-container .delete-btn {
+    background-color: rgb(196, 0, 0);
+    cursor: pointer;
+
+}
+
+.books-display{
+    flex-grow: 2;
+}
+.books-container table {
+    margin: 40px 0;
+    width: fit-content;
+    margin: auto;
+}
+
+.books-container th {
+    text-align: start;
+    padding: 10px;
+}
+.books-container td {
+    padding: 0 10px;
+}
+.btn {
+    width: 80px;
+}
+
+.books-container td, .books-container th{
+    border: 1px solid rgb(214, 214, 214);
+    /* border-right: 1px solid rgb(149, 149, 149); */
+    padding: 10px;
+}
+.paging{
+    text-align: center;
+}
+.prev {
+    cursor: pointer;
+}
+
+.next {
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-basis: 20%;
+    min-width: 300px; ;
+    border: 1px solid #eee;
+    padding: 0 20px;
+    background-color: white;
+}
+.book-card h2{
+margin: 0;
+}
+.img-wraper{
+    height: 60%;
+    overflow: hidden;
+}
+.book-card img {
+    width: 100%;
+}
+
+.book-card .info-span{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-card .info-span .price{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 18px;
+}
+
+.curr-page {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+
+.display-btn img {
+    padding: 0;
+    width: 25px;
+}
+
+.display-btn {
+    background-color: white;
+    cursor: pointer;
+}
+
+.read-modal {
+    box-sizing: border-box;
+    width: 300px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: -350px;
+    padding: 100px 30px 20px;
+    border: 1px solid #eee;
+    box-shadow: -3px 3px 5px rgb(198, 198, 198);
+    background-color: rgb(247, 247, 247);
+}
+
+.read-modal img {
+    width: 225px;
+    right: 50%;
+}
+
+.price {
+    margin: 10px 0;
+}
+.rate-container{
+    margin: 10px 0;
+}
+.rate {
+    background-color: white;
+    padding: 5px 10px;
+}
+
+.description {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: white;
+    padding: 20px;
+}
+
+.close-read-modal-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgb(196, 0, 0);
+}
+
+.bookmark-btn {
+    background-color: rgb(1, 161, 102);
+}
+
+.read-modal-open {
+    right: 0;
+    transition: right .5s;
+}
+
+/* .add-book-user-input {
+    box-sizing: border-box;
+    width: 250px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    left: -250px;
+    padding: 0;
+    border: 1px solid #eee;
+    box-shadow: 3px 3px 5px rgb(198, 198, 198);
+    background-color: rgb(247, 247, 247);
+    transition: start 0.5s;
+} */
+
+.update-user-input, .add-book-user-input{
+    position: absolute;
+    box-sizing: border-box;
+    width: 250px;
+    top: 0;
+    left: -300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 30px;
+    border: 1px solid #eee;
+    box-shadow: 3px 3px 5px rgb(198, 198, 198);
+    background-color: rgb(247, 247, 247);
+    transition: start 0.5s;
+}
+
+.close-left-modal {
+    /* position: absolute; */
+    width: fit-content;
+    margin: 0 0 10px!important;
+    background-color: rgb(196, 0, 0);
+}
+
+.show-left-modal-user-input {
+    left: 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+.disabled {
+    background-color: rgba(1, 161, 102, 0.387);
+}
+
+
+.tbl-btns{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 680px){
+    .container header h1{
+        display: none;
+    }
+
+    .tbl-btns{
+        flex-direction: column;
+    }
+}
