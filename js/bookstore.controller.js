@@ -26,10 +26,10 @@ function renderBooksCards() {
     <div>
     <div class="info-span">
         <div class="price"
-            <h3><span data-trans="price">Price: </span>${book.price}$</h3>
+            <h3><span data-trans="price">Price</span>: ${book.price}$ </h3>
         </div>
         <div>
-        <span data-trans="rate-title">Rate: </span><span>${book.rate}</span>
+        <span data-trans="rate-title">Rate</span><span>: ${book.rate}</span>
         </div>
         <span >id: ${book.id}</span>
     </div>
@@ -96,6 +96,7 @@ function onRemoveBook(bookId) {
 
 // ----- add book -----
 function onAddBook() {
+    document.querySelector('.add-book-user-input').classList.remove('hide')
     document.querySelector('.add-book-user-input').classList.add('show-left-modal-user-input')
 }
 
@@ -106,15 +107,19 @@ function onSubmitNewBook() {
     addBook(newTitle, +newPrice, newImgUrl)
 
     document.querySelector('.add-book-user-input').classList.remove('show-left-modal-user-input')
+    document.querySelector('.add-book-user-input').classList.add('hide')
+
     renderBooks()
 }
 
 function onCloseNewBook() {
     document.querySelector('.add-book-user-input').classList.remove('show-left-modal-user-input')
+    document.querySelector('.add-book-user-input').classList.add('hide')
 }
 
 // ----- update book -----
 function onUpdateBook(bookId) {
+    document.querySelector('.update-user-input').classList.remove('hide')
     document.querySelector('.update-user-input').classList.add('show-left-modal-user-input')
     return gUpdatedBookId = bookId
 
@@ -123,6 +128,7 @@ function onUpdateBook(bookId) {
 
 function onSubmitUpdate() {
     var updatedPrice = document.querySelector('.updated-price').value
+        document.querySelector('.update-user-input').classList.add('hide')
     // ! make sure input is a number
     if (updatedPrice < 0 && updatedPrice > 25) return
     updateBook(gUpdatedBookId, updatedPrice)

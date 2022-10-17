@@ -70,29 +70,29 @@
                 <button class="next green-bg" onclick="onChangePage(1)" data-trans="next-btn">Next</button>
             </div>
 
-            <div class="read-modal"></div>
-
-            <div class="add-book-user-input">
-                <form>
-                    <button onclick="onCloseAddBookModal()" class="close-left-modal">X</button>
-                    <label data-trans="add-title" class="add-title-lbl">Enter book title:</label><br>
-                    <input class="enter-title" type="text"><br>
-                    <label data-trans="add-price">Enter price:</label><br>
-                    <input class="enter-price" type="text"><br>
-                    <label data-trans="add-img-url">Enter image URL:</label><br>
-                    <input class="enter-img" type="text"><br>
-                    <button data-trans="add-book-btn" onclick="onSubmitNewBook()" class="green-bg">Add book</button>
-                </form>
-            </div>
-
-            <div class="update-user-input">
-                <form>
-                    <button onclick="onCloseUpdateModal()" class="close-left-modal">X</button>
-                    <label data-trans="update" class="enter-updated-price">Enter updated price:</label><br>
-                    <input class="updated-price" type="text"><br>
-                    <button data-trans="update-btn" onclick="onSubmitUpdate()" class="green-bg">Update</button>
-                </form>
-            </div>
+                <div class="read-modal hide"></div>
+    
+                <div class="add-book-user-input hide">
+                    <form>
+                        <button onclick="onCloseAddBookModal()" class="close-left-modal">X</button>
+                        <label data-trans="add-title" class="add-title-lbl">Enter book title:</label><br>
+                        <input class="enter-title" type="text"><br>
+                        <label data-trans="add-price">Enter price:</label><br>
+                        <input class="enter-price" type="text"><br>
+                        <label data-trans="add-img-url">Enter image URL:</label><br>
+                        <input class="enter-img" type="text"><br>
+                        <button data-trans="add-book-btn" onclick="onSubmitNewBook()" class="green-bg">Add book</button>
+                    </form>
+                </div>
+    
+                <div class="update-user-input hide">
+                    <form>
+                        <button onclick="onCloseUpdateModal()" class="close-left-modal">X</button>
+                        <label data-trans="update" class="enter-updated-price">Enter updated price:</label><br>
+                        <input class="updated-price" type="text"><br>
+                        <button data-trans="update-btn" onclick="onSubmitUpdate()" class="green-bg">Update</button>
+                    </form>
+                </div>
         </div>
     </div>
 <!-- JavaScript Bundle with Popper -->

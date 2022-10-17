@@ -12,6 +12,7 @@ function onRead(bookId) {
 }
 
 function renderModal(book) {
+    document.querySelector('.read-modal').classList.remove('hide')
     var elModal = document.querySelector('.read-modal')
     var strHTML = `
     <button onclick="onCloseModal()" class="close-read-modal-btn">X</button>
@@ -32,7 +33,6 @@ function renderModal(book) {
     `
     elModal.innerHTML = strHTML
     renderRateBtn(book)
-    // elModal.querySelector('.rate span').innerText = `${book.rate}`
     elModal.classList.add('read-modal-open')
 
     doTrans()
@@ -46,15 +46,19 @@ function renderRate(book) {
 function onCloseModal() {
     var elModal = document.querySelector('.read-modal')
     elModal.classList.remove('read-modal-open')
+    document.querySelector('.read-modal').classList.add('hide')
 }
 
 function onCloseAddBookModal(){
     elUpdateModal = document.querySelector('.add-book-user-input')
     elUpdateModal.classList.remove('.show-left-modal-user-input')
+    document.querySelector('.read-modal').classList.add('hide')
+
 }
 function onCloseUpdateModal(){
     elUpdateModal = document.querySelector('.update-user-input')
     elUpdateModal.classList.remove('.show-left-modal-user-input')
+    document.querySelector('.read-modal').classList.add('hide')
 }
 function getCurrBookDisplayed(bookId) {
     var book = getBookById(bookId)
